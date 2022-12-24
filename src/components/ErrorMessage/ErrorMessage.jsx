@@ -1,4 +1,5 @@
 import { NoResults, Query } from './ErrorMessage.styled';
+import PropTypes from 'prop-types';
 
 export const ErrorMessage = ({ searchQuery }) => (
   <NoResults>
@@ -6,3 +7,7 @@ export const ErrorMessage = ({ searchQuery }) => (
     <Query> {searchQuery}</Query>
   </NoResults>
 );
+
+ErrorMessage.propTypes = {
+  searchQuery: PropTypes.string.isRequired,
+};
