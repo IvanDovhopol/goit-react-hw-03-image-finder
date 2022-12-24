@@ -82,7 +82,9 @@ export class App extends Component {
     return (
       <Body>
         <Searchbar onSubmit={this.handleSubmit} load={load} />
-        <ImageGallery items={images} modalUrl={this.urlForModal} />
+        {images.length > 0 && (
+          <ImageGallery items={images} modalUrl={this.urlForModal} />
+        )}
 
         {error && <ErrorMessage searchQuery={searchQuery} />}
         {showModal && <Modal onClose={this.toggleModal} modalUrl={modalUrl} />}

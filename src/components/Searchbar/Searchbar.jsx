@@ -8,8 +8,14 @@ import {
   Label,
   Input,
 } from './Searchbar.styled';
+import PropTypes from 'prop-types';
 
 export class Searchbar extends Component {
+  static propTypes = {
+    onSubmit: PropTypes.func.isRequired,
+    load: PropTypes.bool.isRequired,
+  };
+
   state = {
     searchQuery: '',
   };

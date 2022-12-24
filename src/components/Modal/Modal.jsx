@@ -4,11 +4,7 @@ import PropTypes from 'prop-types';
 
 export class Modal extends Component {
   static propTypes = {
-    items: PropTypes.arrayOf(
-      PropTypes.shape({
-        tag: PropTypes.string.isRequired,
-      })
-    ),
+    onClose: PropTypes.func.isRequired,
     modalUrl: PropTypes.string.isRequired,
   };
 
@@ -29,12 +25,12 @@ export class Modal extends Component {
   };
 
   render() {
-    const { modalUrl, tag } = this.props;
+    const { modalUrl } = this.props;
 
     return (
       <Overlay onClick={this.handleClickOnBackdrop}>
         <ModalWindow>
-          <img src={modalUrl} alt={tag} />
+          <img src={modalUrl} alt="content" />
         </ModalWindow>
       </Overlay>
     );
